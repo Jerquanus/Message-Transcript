@@ -1,107 +1,97 @@
+import "./style.css"
+import moment from "moment";
+
 export default function ChatDisplay(props) {
     console.log(props.chat, "THE GOODS--")
     const transcript = props.chat;
-    const theMessages = transcript.messages;
-    // const boolean = theMessages.focus.type();
+    // ----- condtional rendering will be used -----
+    // added optional chaining to theMessages
+    const theMessages = transcript && transcript?.messages;
 
-
+    // Displaying the Date
     const date = () => {
+        // would convert date using moment--
         const theDate = transcript.conversationDate;
+        const newDate= moment(theDate).format("dddd, MMMM Do YYYY");
         console.log(theDate, "what time");
 
         return (
-            <div>
-                <h1>
-                   {theDate}
-                </h1>
+            <div className="wrapper">
+                <div className="Lineup">
+                    {/* flexbox or grid to seperate the date and header to display on one line */}
+                    <div className="Headline" style={{color:"#ee8065d2"}}><h1>CHAT TRANSCRIPT</h1></div>
+                    <div className="Date" style={{color:"#9bd0e5"}}><h1> {newDate}</h1></div>
+                </div>            
             </div>
         )
+
+
     };
 
-    const msgs = () => {
-        console.log(theMessages, "digging");
-        // console.log(theMessages.type(), "is it true??")
-        // const theMsg = transcript.focused;
-        // console.log(props.focused,"what was said")
+    // Displaying the chat
+    const chatMessages = () => {
 
-        // ----- styles for inline styling -----
-        
-                            const focused = {
-                                color: "white",
-                                backgroundColor: "Blue",
-                                padding: "10px",
-                                marginLeft: "800px"
-                                // false:{
-                                //     color: "white",
-                                //     backgroundColor: "DodgerBlue",
-                                //     padding: "10px",
-                                //     marginRight: "1000px"
-                                // },
-                                // true:{
-                                //     color: "white",
-                                //     backgroundColor: "Blue",
-                                //     padding: "10px",
-                                //     marginLeft: "1000px"
-                                // }
 
-                            };
-
-        // ------ END of inline style setting ----
         return (
-            <div>
-                
-                {theMessages && theMessages.map(theMessages => {
-            
-                    return (                    
-                    <div key={theMessages.timestamp}>
-                         <div>
-                            <img src= {theMessages.image} alt="User"/>
-                            {theMessages.username}
-                            {theMessages.message}
-                         </div>
+                <div className="Container">
 
-                        {/* using an anynomus function to allow if else statment */}
-                        {/* {(({}) => {
+                        <div className="MygelAvatar1">
+                            <img src= {theMessages[0]?.image} style={{float: 'left', borderRadius :'180px', padding:'10px'}} alt="User Avatar"
+                            className="HaloM"/>
+                        </div>
 
-                            //  {`banner ${active ? "active" : ""}
-                            if (theMessages === false) {
-                                console.log(theMessages, "look here--")
-                                return (
-                                    <div style={unfocused}>
-                                        <img src= {theMessages.image} alt="User"/>
-                                        {theMessages.username}
-                                        {theMessages.message}
-                                    </div>
-            
-                                )
-                            } else if (theMessages.focused === true) {
-                                return (
-                                    <div style={focused}>
-                                    <img src= {theMessages.image} alt="User"/>
-                                    {theMessages.username}
-                                    {theMessages.message}
-                                </div>
-                                )
-                            }
-                        })}  */}
-                        
-                        {/* <div style={focused}>
-                        <img src= {theMessages.image} alt="User"/>
-                        {theMessages.username}
-                        {theMessages.message}
-                        </div> */}
+                        <div className="MygelChat1">
+                            <p>{theMessages[0]?.message}</p>
+                            <h3 style={{color:"#c7754f"}}>{theMessages[0]?.username}</h3>
+                            {/* --- timestamp conversion needed using moment but since its not mapped over difficulties converting ---*/}
+                            <p>{theMessages[0]?.timestamp}</p>
+                        </div>
 
-                    </div>)
-                })}
-            </div>
-        )
+                        <div className="CharlieAvatar1">
+                            <img src= {theMessages[1]?.image} style={{float: 'right', borderRadius :'180px', padding:'10px'}} alt="User Avatar"
+                            className="HaloC"/>
+                        </div>
 
+                        <div className="CharlieChat1">
+                            <p>{theMessages[1]?.message}</p>
+                            {/* --- timestamp conversion needed using moment (npm install)  ---*/}
+                            <h3 style={{color:"#c7754f"}}>{theMessages[1]?.username}</h3>
+                            <p>{theMessages[1]?.timestamp}</p>
+                        </div>
+
+                        <div  className="MygelAvatar2">
+                            <img src= {theMessages[2]?.image} style={{float: 'left', borderRadius :'180px', padding:'10px'}} alt="User Avatar"
+                            className="HaloM"/>
+                        </div>
+
+                        <div className="MygelChat2">
+                             <p>{theMessages[2]?.message}</p>
+                                {/* --- timestamp conversion needed using moment(npm install) ---*/}
+                            <h3 style={{color:"#c7754f"}}>{theMessages[2]?.username}</h3>
+                            <p>{theMessages[2]?.timestamp}</p>
+                        </div>
+
+                        <div className="CharlieAvatar2">
+                                <img src= {theMessages[3]?.image} style={{float: 'right', borderRadius :'180px', padding:'10px'}} alt="User Avatar"
+                                className="HaloC"/>
+                        </div>
+
+                        <div className="CharlieChat2">    
+                             <p>{theMessages[3]?.message}</p>
+                                {/* --- timestamp conversion needed using moment (npm install)  ---*/}
+                            <h3 style={{color:"#c7754f"}}>{theMessages[3]?.username}</h3>
+                            <p>{theMessages[3]?.timestamp}</p>
+                        </div>
+                </div>  
+        );
     };
+
+
 
     return (
         <>
         {date(props)}
-        {msgs(props)}
+        {chatMessages(props)}
         </>
     )
 };

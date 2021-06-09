@@ -1,0 +1,105 @@
+
+/* ----- GRID For top header area (className Line Up) ----- */
+.Lineup{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 1px;
+    grid-row-gap: 0px;
+    border-bottom: 2px solid rgb(226, 226, 226);
+}
+
+.Headline {
+    grid-area: 2 / 2 / 3 / 4;;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.Date {
+    grid-area: 2 / 5 / 3 / 7;;
+    font-family: 'Open Sans', sans-serif;
+}
+/* ---- END of GRID for (className Line Up) ---  */
+
+/* ---- GRID for chat messages return -----  */
+.Container {
+    /* margin: 200px; */
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+
+.MygelAvatar1 {
+    grid-area: 2 / 2 / 4 / 3;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.MygelChat1 {
+    grid-area: 2 / 3 / 4 / 6;
+    color: black;
+    background-color: #ecf2f7;
+    padding: 50px;
+    text-align: left;
+    border-radius: 10px;
+    margin: 15px;
+    box-shadow: -2px -3px -3px  #4a4a4b;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.CharlieAvatar1 {
+    grid-area: 4 / 6 / 6 / 7;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.CharlieChat1 {
+    grid-area: 4 / 3 / 6 / 6;
+    color: black;
+    background-color: #dfebf0;
+    padding: 50px;
+    text-align: left;
+    border-radius: 10px;
+    margin: 15px;
+    box-shadow: 2px 3px 3px  #979797;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.MygelAvatar2 {
+    grid-area: 6 / 2 / 8 / 3;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.MygelChat2 {
+    grid-area: 6 / 3 / 8 / 6;
+    color: black;
+    background-color: #ecf2f7;
+    padding: 50px;
+    text-align: left;
+    border-radius: 10px;
+    margin: 15px;
+    box-shadow: -2px -3px -3px  #4a4a4b;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.CharlieAvatar2 {
+    grid-area: 8 / 6 / 10 / 7;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.CharlieChat2 {
+    grid-area: 8 / 3 / 10 / 6;
+    color: black;
+    background-color: #dfebf0;
+    padding: 50px;
+    text-align: left;
+    border-radius: 10px;
+    margin: 15px;
+    box-shadow: 2px 3px 3px  #979797;
+    font-family: 'Open Sans', sans-serif;
+}
+.HaloM{
+    box-shadow: -3px 3px 3px #9bd0e5;  
+}
+.HaloC{
+    box-shadow: 3px 3px 3px #67aeee;  
+}
