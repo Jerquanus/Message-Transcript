@@ -9,21 +9,17 @@ function Chatlog () {
 
     useEffect(() => {
         const getChat = (async () => {
-            const chat = await axios.get(
-                "https://redventures.github.io/chatly-ifier/api/v1.json")
+            const chat = await axios
+            .get("https://redventures.github.io/chatly-ifier/api/v1.json")
             .then ((response) => {
                 const allChat = response.data
                 setChat(allChat.data);
             });
-            
         });
         getChat();
         }, []);
 
-        return(
-            <ChatDisplay chat={chat} />
-        )
-        
-}
+    return  <ChatDisplay chat={chat} />    
+};
 
 export default Chatlog;

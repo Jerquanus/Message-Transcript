@@ -1,6 +1,6 @@
 
 /* ----- GRID For top header area (className Line Up) ----- */
-.Lineup{
+.lineup{
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     grid-template-rows: repeat(3, 1fr);
@@ -9,19 +9,19 @@
     border-bottom: 2px solid rgb(226, 226, 226);
 }
 
-.Headline {
+.headline {
     grid-area: 2 / 2 / 3 / 4;;
     font-family: 'Open Sans', sans-serif;
 }
 
-.Date {
+.date {
     grid-area: 2 / 5 / 3 / 7;;
     font-family: 'Open Sans', sans-serif;
 }
 /* ---- END of GRID for (className Line Up) ---  */
 
 /* ---- GRID for chat messages return -----  */
-.Container {
+.container {
     /* margin: 200px; */
     display: grid;
     grid-template-columns: repeat(7, 1fr);
@@ -30,12 +30,12 @@
     grid-row-gap: 0px;
 }
 
-.MygelAvatar1 {
+.mygelAvatar1 {
     grid-area: 2 / 2 / 4 / 3;
     font-family: 'Open Sans', sans-serif;
 }
 
-.MygelChat1 {
+.mygelChat1 {
     grid-area: 2 / 3 / 4 / 6;
     color: black;
     background-color: #ecf2f7;
@@ -47,12 +47,12 @@
     font-family: 'Open Sans', sans-serif;
 }
 
-.CharlieAvatar1 {
+.charlieAvatar1 {
     grid-area: 4 / 6 / 6 / 7;
     font-family: 'Open Sans', sans-serif;
 }
 
-.CharlieChat1 {
+.charlieChat1 {
     grid-area: 4 / 3 / 6 / 6;
     color: black;
     background-color: #dfebf0;
@@ -64,12 +64,12 @@
     font-family: 'Open Sans', sans-serif;
 }
 
-.MygelAvatar2 {
+.mygelAvatar2 {
     grid-area: 6 / 2 / 8 / 3;
     font-family: 'Open Sans', sans-serif;
 }
 
-.MygelChat2 {
+.mygelChat2 {
     grid-area: 6 / 3 / 8 / 6;
     color: black;
     background-color: #ecf2f7;
@@ -81,12 +81,12 @@
     font-family: 'Open Sans', sans-serif;
 }
 
-.CharlieAvatar2 {
+.charlieAvatar2 {
     grid-area: 8 / 6 / 10 / 7;
     font-family: 'Open Sans', sans-serif;
 }
 
-.CharlieChat2 {
+.charlieChat2 {
     grid-area: 8 / 3 / 10 / 6;
     color: black;
     background-color: #dfebf0;
@@ -97,9 +97,9 @@
     box-shadow: 2px 3px 3px  #979797;
     font-family: 'Open Sans', sans-serif;
 }
-.HaloM{
+.haloM{
     box-shadow: -3px 3px 3px #9bd0e5;  
 }
-.HaloC{
+.haloC{
     box-shadow: 3px 3px 3px #67aeee;  
 }
